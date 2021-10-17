@@ -4,13 +4,12 @@ import { UPDATE_PRODUCTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PRODUCTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../../assets/spinner.gif';
 
 function ProductList() {
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-
   const { currentCategory } = state;
 
   const { loading, data } = useQuery(QUERY_PRODUCTS);
